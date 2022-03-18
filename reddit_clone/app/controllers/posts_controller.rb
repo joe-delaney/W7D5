@@ -8,7 +8,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    debugger
     @post = Post.new(post_params)
     @post.author = current_user
 
