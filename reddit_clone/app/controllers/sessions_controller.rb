@@ -20,6 +20,6 @@ before_action :ensure_logged_in, only:[:destroy]
   def destroy
     logout!
     redirect_to new_session_url
-  endd
+  end
 
 end

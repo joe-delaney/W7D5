@@ -10,6 +10,15 @@
   </head>
 
   <body>
+    <% if  !logged_in?%>
+      <a href="<%= new_session_url %>">Sign in!</a>
+    <% end %>
+    
+    <% if flash.now[:errors] %>
+      <% flash.now[:errors].each do |error|%>
+        <%= error %>
+      <% end %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
