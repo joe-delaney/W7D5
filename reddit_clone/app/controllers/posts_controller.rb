@@ -12,8 +12,6 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.author = current_user
 
-    # @post.post_subs.each {|post_sub| post_sub.post_id = @post.id}
-
     if @post.save
       redirect_to post_url(@post)
     else

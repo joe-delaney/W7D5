@@ -1,13 +1,12 @@
 class PostSub < ApplicationRecord
-  validates :post_id, :sub_id, presence:true
+  validates :sub_id, presence:true
 
   belongs_to :post,
     foreign_key: :post_id,
-    class_name: :Post
+    class_name: :Post,
+    optional: :true
 
   belongs_to :sub,
     foreign_key: :sub_id,
     class_name: :Sub
-
-
 end
